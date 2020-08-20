@@ -4,7 +4,6 @@ int main()
 {
     vector<int> arr={6,2,5,4,5,1,6};
     int size=7;
-    int n=size;
     vector<int>v_left;
     stack<pair<int,int>> s_left;
     vector<int>v_right;
@@ -69,9 +68,9 @@ int main()
         s_right.push({arr[i],i});
     }    
     
-    for(i=0;i<n;i++)
+    for(i=0;i<size;i++)
     {   
-        ansvector.push_back((v_right[n-i-1]-v_left[i]-1)*arr[i]);
+        ansvector.push_back((v_right[size-i-1]-v_left[i]-1)*arr[i]);
     }
     cout<<*max_element(ansvector.begin(),ansvector.end());     
 }
